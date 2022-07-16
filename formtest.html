@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-control input{
+            border: 2px solid whitesmoke;
+            border-radius: 4px;
+            display: block;
+            font-size:12px;
+            padding:10px;
+            width: 100%;
+        }
+
+        input-control input:focus{
+            outline:0;
+
+        }
+        .input-control.success input{
+             border-color: green;
+
+        }
+        .input-control.error input{
+             border-color: red;
+             
+        }
+        .input-control .error {
+           color: red;
+           font-size: 9px;
+           heigth: 13px;
+             
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form id="form" action="/">
+            <h1>TESTER</h1>
+            <div class="input-control">
+                <label for="username">UserName</label>
+                <input id="username" name="username" type="text">
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    <script>
+       const form = document.getElementById("form");
+       const username = document.getElementById("username"); 
+       form.addEventListener("submit", e =>{
+            e.preventDefault();
+
+            validateInputs();
+       });
+
+
+
+       // ERROR
+
+       const setError = (element, message) =>{
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector(" .error");
+
+            errorDisplay.innerText = message;
+            inputControl.classList.add("error");
+            inputControl.classList.remove("success");
+
+       }
+
+
+       //  SUCCESS
+
+       const setSuccess = element => {
+        const  inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector(" .error");
+        errorDisplay.innerText = '';
+        inputControl.classList.add("success");
+        inputControl.classList.remove("error");
+
+       }
+
+
+
+
+
+
+
+       const validateInputs = ()=>{
+
+        const usernameValue = username.value.trim();
+       };
+
+
+
+
+       // condicions
+
+
+       if(username === ""){
+ setError(username, "Username is required");
+       }else{
+setSuccess(username);
+       }
+
+
+
+    </script>
+</body>
+</html>

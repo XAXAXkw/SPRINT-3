@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const cartList=[];
+        const cart = [];
+
+        const item1 = {
+            id:"pepe"
+        }
+        const item2 = {
+            id:"pepe"
+        }
+        const item3 = {
+            id:"joan"
+        }
+        const item4 = {
+            id:"maria"
+        }
+        const item5 = {
+            id:"pepe"
+        }
+        const item6 = {
+            id:"joan"
+        }
+
+        cartList.push(item1,item2,item3,item4,item5,item6);
+        
+
+        function test(){
+            console.log(cartList);
+
+            //push 1er item per comparar
+            
+            //anula el void de quantity
+            
+ // declarar comptador cart: j
+                let j = 0;
+                
+cart.push(cartList[0]);
+cart[0].quantity=0;
+
+            // iterate cartList
+            for(let i = 0; i <cartList.length; i++){
+
+                // busca tots els pepes
+for (let o of cart){
+    if(cartList[i].id != cart[j].id){
+
+        i++;
+    }else{
+        cart[j].quantity++;
+    }
+               
+                // troba id
+               /* if (cartList[i].id === cart[j].id){
+                     // add Quantity
+                     ++cart[j].quantity;
+                }else{
+
+                // NO TROBA id : push un NOU item i ++j de cart
+               
+                cart.push(cartList[i]);
+                j++;
+                cart[j].quantity=1;
+                */
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="test()">CART</button>
+</body>
+</html>

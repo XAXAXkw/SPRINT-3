@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="gencart()">TEST</button>
+
+    <script>
+      let a = {
+        id: "Pepe",
+      };
+      let b = {
+        id: "Hans",
+      };
+      let c = {
+        id: "Pepe",
+      };
+      let d = {
+        id: "Pepe",
+      };
+      let e = {
+        id: "Maria",
+      };
+      let f = {
+        id: "Hans",
+      };
+      let g = {
+        id: "Pepe",
+      };
+      let h = {
+        id: "James",
+      };
+      let ii = {
+        id: "Maria",
+      };
+      let j = {
+        id: "Pepe",
+      };
+
+      let k = {
+        id: "Matusalen",
+      };
+      let l = {
+        id: "Bob",
+      };
+      let m = {
+        id: "James",
+      };
+
+      let cartList = [];
+      let cart = [];
+
+      cartList.push(a, b, c, d, e, f, g, h, ii, j, k, l, m);
+
+
+
+
+
+      
+
+      function gencart() {
+        cart.push(cartList[0]);
+        cart[0].quantity = 1;
+        cartList.splice(0, 1);
+
+        // iterator for CART = i
+        for (let i = 0; i < cartList.length; i++) {
+          // iterator for CARTList = j
+          for (let j = 0; j < cartList.length; j++) {
+            if (cart[i].id === cartList[j].id && cartList.length != 1) {
+              ++cart[i].quantity;
+              cartList.splice(j, 1);
+              j = 0;
+            } else if (j + 1 === cartList.length) {
+              cartList[0].quantity = 1;
+              cart.push(cartList[0]);
+
+              cartList.splice(0, 1);
+              j = -1;
+              i++;
+            }
+          }
+        }
+        if (cartList.length === 1) {
+          cartList[0].quantity = 1;
+          cart.push(cartList[0]);
+
+          cartList.splice(0, 1);
+        }
+        console.log(cart);
+      }
+
+      
+    </script>
+  </body>
+</html>

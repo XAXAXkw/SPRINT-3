@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="test()">TESTER</button>
+
+    <script>
+
+        const cartList = [];
+        const cart = [];
+        let a ={
+            name:"Aaron"
+        }
+        let b ={
+            name:"Aaron"
+        }
+        let c = {
+            name:"Marx"
+        }
+
+        let d = {
+            name:"Marxie"
+        }
+
+        let e= {
+            name:"Aaron"
+        }
+
+        let f = {
+            name:"Marxie"
+        }
+
+
+
+
+
+        cartList.push(a,b,c,d,e,f);
+
+        function test(){
+            for (x of cartList){
+                x.quantity=1;
+            }
+
+            let i = 0;
+               cart.push(cartList[i]);
+               ++i;
+            let j = 0;
+            for(i; i<cartList.length;i++){
+               
+                  
+               while (cart[j].name===cartList[i].name && i < cartList.length){
+                   ++cart[j].quantity;
+                   ++i;
+               }
+               while(cart[j].name!=cartList[i].name && i < cartList.length){
+                  
+               cart.push(cartList[i]);
+                ++i;
+
+                }
+                   ++j;
+                  
+                              
+
+}console.log(cart);
+
+}
+     
+
+        
+
+
+
+            /*
+            let index=0;
+            for (var x of cartList){
+              
+                x.quantity=1;
+                ++index;
+                console.log(x);
+            }
+            cart.push(cartList[0]);
+            
+            for(let i=1; i<cart.length; i++){
+                let encontrado = cart[i].name;
+                
+                if(encontrado===cart[i].name){
+                    ++cart[i].quantity;
+                }
+            }
+
+
+        }*/
+            
+            
+            
+            
+            
+            
+            
+            
+            /*let i=0;
+            let check = cartList[i].name;
+
+if (i===0){
+    cart.push(cartList[i]);
+    cart[i].quantity=1;
+    
+}else if (cart[i-1].name != cartList[i].name){
+
+    cart[i].quantity=1;
+    cart.push(cartList[i]);
+   
+
+}else {
+    cart[i-1].quantity+=1;
+    
+    
+}
+}*/
+
+        
+              /* let i=0;
+            let encontrado = list[i].name;
+
+            while((encontrado!=list[i].name && (i<=list.length))){
+                list[i].quantity=1;
+                cart.push(list[i]);
+                i++;
+            }if (encontrado==list[i].name){
+                ++list[i].quantity;
+            } else if(encontrado!=list[i].name){
+                list[i].quantity=1;
+                cart.push(list[i]);
+            }
+        }
+
+
+
+         
+
+              buscador(){
+          let encontrado = prompt("Nom Hotel a modificar");
+          let long = LLISTAHOTELS.length;
+          let i = 0;
+          while ((encontrado != LLISTAHOTELS[i].nom) && (i<long)) {
+            i++;
+          } if (encontrado == LLISTAHOTELS[i].nom){
+            
+            LLISTAHOTELS[i].nom = prompt("Nou Nom...");
+          LLISTAHOTELS[i].hab = prompt("Num Hab...");
+          LLISTAHOTELS[i].plant = prompt("Nun Plantas...");
+          LLISTAHOTELS[i].m2 = prompt("m2...");
+          
+        }else if (encontrado != LLISTAHOTELS.nom){ alert('No existe')
+      }alert('Hotel Modificado');
+        }
+      }
+
+            
+                
+                {
+                    if{
+                        ++cart[i].quantity;
+                    }else{
+                        cart.push(list[i]);
+                    }
+                }
+               
+        }
+        }*/
+
+        
+    </script>
+</body>
+</html>

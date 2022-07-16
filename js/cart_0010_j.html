@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="gencart()">TEST</button>
+
+    <script>
+      let a = {
+        id: "Pepe",
+      };
+      let b = {
+        id: "Hans",
+      };
+      let c = {
+        id: "Pepe",
+      };
+      let d = {
+        id: "Pepe",
+      };
+      let e = {
+        id: "Maria",
+      };
+      let f = {
+        id: "Hans",
+      };
+      let g = {
+        id: "Pepe",
+      };
+      let h = {
+        id: "James",
+      };
+      let ii = {
+        id: "Maria",
+      };
+      let j = {
+        id: "Pepe",
+      };
+      let cartList = [];
+      let cart = [];
+
+      cartList.push(a, b, c, d, e, f, g, h, ii, j);
+
+  
+
+        function gencart() { 
+
+            cart.push(cartList[0]);
+            cart[0].quantity = 1;
+            cartList.splice(0,1);
+
+
+
+                
+                // iterator for CARTLIST = i
+                for(let i=0; i<cartList.length; i++){
+                let cartlong = cart.length;
+                 // iterator for CART = j
+                for( let j = 0; j < cartList.length; j++){
+                 let listlong = cartList.length;
+
+                 if( cart[i].id === cartList[j].id && cartList.length != 1){
+                         ++ cart[i].quantity;
+                    cartList.splice(j,1);
+                    j=0;
+                 } else if( j+1 === cartList.length){
+                    cartList[0].quantity=1;
+                    cart.push(cartList[0]);
+            
+                    cartList.splice(0,1);
+                    j=-1;
+                    i++;
+                 }
+                }
+            }if (cartList.length === 1){
+
+
+            cartList[0].quantity=1;
+                    cart.push(cartList[0]);
+            
+                    cartList.splice(0,1);}
+                    console.log(cart);
+             
+                
+                
+            }
+        
+
+
+      
+
+
+        /*
+        cartList[0].quantity = 1;
+        cart.push(cartList[0]);
+        cartList.splice(0, 1);
+
+        cartList.forEach(myFunction);
+
+        
+
+        function myFunction() {
+
+        let i = 0;
+        
+            for (let o of cartList){
+          for (let j = 0; j < cartList.length; j++) {
+            if (cart[i].id === cartList[j].id) {
+              cart[i].quantity += 1;
+              cartList.splice(j, 1);
+              j--;
+            }
+          }
+          if (cartList.length != 1){
+          cartList[i].quantity=1;
+          cart.push(cartList[i]);
+          cartList.splice(i, 1);
+          i++;
+        }else {
+            let i=0;
+            cartList[i].quantity=1;
+          cart.push(cartList[i]);
+          cartList.splice(i, 1);
+        }
+
+        }}
+      }*/
+
+      /*
+    
+            let i= 0;
+           
+
+            for(i; i < cartList.length; i++){
+        cartList[i].quantity=1;
+       cart.push(cartList[i]);
+       cartList.splice(i,1);
+       
+ let j= 0;
+       for(j; j < cartList.length; j++){
+        if(cart[i].id===cartList[j].id){
+            cart[i].quantity += 1;
+            cartList.splice(j,1);
+            j--;
+        }
+       }i--;
+
+}
+      }*/
+
+      /*
+        let i = 0;
+        
+
+        // loop de cart[i] quan es fa el seguent push:
+
+        for (i; i < cartList.length; i++) {
+          if (i === 0) {
+            cart.push(cartList[i]);
+            cartList.splice(i,1);
+            cart[i].quantity = 1;
+          } else {
+            cart.push(cartList[i]);
+            cart[i].quantity = 0;
+            cartList.splice(i,1);
+          }
+          // for (j; j < cartList.length; j++) {
+
+          // LOOP bo per ADDING QUANTITY - cart[i] és el que cal itinerar, abans cal fer el push de ++i
+
+          for(let x of cartList) {
+            if (x.id === cart[i].id) {
+              console.log("es igual");
+              ++cart[i].quantity;
+              let j = cartList.indexOf(x);
+              cartList.splice(j,1);
+              --j;
+            }
+          }
+        }
+      }*/
+    </script>
+  </body>
+</html>

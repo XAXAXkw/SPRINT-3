@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="gencart()">TEST</button>
+
+    <script>
+      let a = {
+        id: "Pepe",
+      };
+      let b = {
+        id: "Hans",
+      };
+      let c = {
+        id: "Pepe",
+      };
+      let d = {
+        id: "Pepe",
+      };
+      let e = {
+        id: "Maria",
+      };
+      let f = {
+        id: "Hans",
+      };
+      let g = {
+        id: "Pepe",
+      };
+      let h = {
+        id: "James",
+      };
+      let ii = {
+        id: "Maria",
+      };
+      let j = {
+        id: "Pepe",
+      };
+
+      let k = {
+        id: "Matusalen",
+      };
+      let l = {
+        id: "Bob",
+      };
+      let m = {
+        id: "James",
+      };
+
+      let cartList = [];
+      let cart = [];
+
+      cartList.push(a, b, c, d, e, f, g, h, ii, j, k, l, m);
+
+
+
+/*
+	
+Es mucho más fácil de lo que planteas.
+Varias cosas:
+- En vez de let i y luego for (i=. es mucho más sencillo
+for (let i=0;,....
+-Normalmente, casi siempre que se recorre un array es mucho más sencillo y corto utilizar un for in...
+-No hace falta utilizar un for dentro de otro for
+-Para evitar este segundo for, puedes utilizar el método find,
+
+lo que me preguntas sobre que " el for no acepta la longitud de cartList, por qué?"
+Yo, para asegurarme 1º pondria delante del for;: console.log(cartList.length)
+Si no se muestra un valor correcto, puede ser varios motivos, como por ejemplo porque al darle un valor a cartList (antes), el let cartList esté dentro de una función (y por lo tanto tenga un valor local), o el flujo no haya pasado por ningún sitio donde se le haya dado ningún valor a dicho array.
+
+Esta función se puede hacer de múltiples maneras, posibles ... una de ellas seria un único bucle, que dentro tiene un find, con un único que evalua lo que tiene que hacer en cada caso. Dos for anidados suelen dar siempre problemas, a la vez que provoca que todos los proce
+
+
+*/
+
+//&& cartList.indexOf(element)<((cartList.length)+14)
+
+      function gencart() {
+
+
+
+        for (let i = 0; i < cartList.length; i++){
+
+          cartList[i].quantity=1;
+        cart.push(cartList[i]);
+
+          cartList.find(checkId);
+          function checkId (element){
+            console.log(cartList.indexOf(element)+14);
+            if (element.id === cart[i].id && cartList.indexOf(element)!=0){
+              ++cart[i].quantity;
+              //cartList.splice(cartList.indexOf(element),1);
+              alert("hey");
+            }
+          }
+        }
+ 
+    }
+/*
+
+
+        let buyItem = products.find(o => o.id === id);
+
+        cartList.find(checker);
+        function checker(checkId){
+            for(let o = 0; o <cartList.length; o++){
+            if(checkId.id == cartList[o].id){
+                console.log(cartList[o].id + checkId.id);
+                cartList.splice(o,1);
+            }else if(o+1 ==cartList.length){
+                alert("out")
+            }
+        }}*/
+
+
+
+        /*
+
+      cart.push(cartList[0]);
+      cart[0].quantity=1;
+
+        for (let x in cartList){
+          cartList.map(finder);
+          function finder(item){
+            if(item.id === cart[x].id){
+
+              alert(item.id);
+              alert(cartList[x].id);
+
+            }
+          }
+        }*/
+
+/*
+       
+for (let x in cartList) {
+  cartList[x].quantity = 1;
+  cartList.find(checkId);
+  function checkId(o){
+    return o.id === cartList[x];
+  }
+}*/
+
+
+      
+
+      
+    </script>
+  </body>
+</html>

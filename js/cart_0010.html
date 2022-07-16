@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="gencart()">TEST</button>
+
+    <script>
+      let a = {
+        id: "Pepe",
+      };
+      let b = {
+        id: "Hans",
+      };
+      let c = {
+        id: "Pepe",
+      };
+      let d = {
+        id: "Pepe",
+      };
+      let e = {
+        id: "Maria",
+      };
+      let f = {
+        id: "Hans",
+      };
+      let g = {
+        id: "Pepe",
+      };
+
+      let cartList = [];
+      let cart = [];
+
+      cartList.push(a, b, c, d, e, f, g);
+
+      function gencart() {
+        let i = 0;
+        let j = 1;
+
+        // loop de cart[i] quan es fa el seguent push:
+
+        for (i; i < cartList.length; i++) {
+          if (i === 0) {
+            cart.push(cartList[i]);
+            cart[0].quantity = 0;
+          } else {
+            cart.push(cartList[i]);
+            cart[i].quantity = 0
+          }
+          // for (j; j < cartList.length; j++) {
+
+          // LOOP bo per ADDING QUANTITY - cart[i] és el que cal itinerar, abans cal fer el push de ++i
+
+          for (let x of cartList) {
+            if (x.id === cart[i].id) {
+              console.log("es igual");
+              ++cart[i].quantity;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

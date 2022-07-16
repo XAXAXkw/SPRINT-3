@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="genCart()">TEST</button>
+
+    <script>
+            const cartList = [];
+            const cart = [];
+            a = {
+              
+              name: "pepe",
+            };
+            b = {
+              
+              name: "pepe",
+            };
+            c = {
+              
+              name: "pepi",
+            };
+            cartList.push(a, b, c);
+
+            function genCart() {
+                for (let i = 0; i < cartList.length; i++){
+                    cartList.quantity=0;
+                    let check = cartList[i].name;
+                    if (i=0){
+                        cart.push(cartList[i]);
+                    }else if (cartList[i].name === check){
+                        ++cartList[i].quantity;
+
+                    }else {
+                        cart.push(cartList[i]);
+                    }
+                }
+            }
+
+              /*
+              for (let i = 0; i < cartList.length; i++) {
+                if ((i === 0)) {
+                  cartList[i].quantity = 1;
+                  cart.push(cartList[i]);
+                } else if (cartList[i].name === cart[i-1].name) {
+                  ++cart[i-1].quantity;
+                }else{
+                  cart[i].quantity=1;
+                  cart.push(cartList[i]);
+                }
+              }
+              console.log(cart);
+            }*/
+
+            /*
+              let i=0;
+              cartList[i].quantity=1;
+              cart.push(cartList[i]);
+
+              for (let i=0 ;i<cartList.length;i++){
+              if(cartList[i].name != cart[i].name){
+               cart.push(cartList[i]);
+              }else  {
+                 ++cart[i].quantity;
+              }
+
+
+            }
+          }*/
+
+            /*
+
+               {
+                let buscador = cartList[i].name;
+
+                cartList[i].quantity = 1;
+                todos.push(cartList[i]);
+                for (let j = 0; j < todos.length; j++) {
+                  if (buscador != todos[j].name) {
+                    todos[j].quantity = 1;
+                  } else {
+                    todos[j].quantity = todos[j].quantity + 1;
+                  }
+                }
+              }
+            }*/
+
+            /*
+               const todos =[];
+              console.log(cartList);
+      for (let i=0; i<cartList.length;i++){
+
+          cartList[i].quantity=1;
+          todos.push(cartList[i]);
+      }
+      for (let i=0; i<cartList.length;i++){
+          if(cartList[i].name===todos[i].name){
+              todos[i].quantity +=1;
+          }
+          console.log(todos);
+
+      }
+
+
+
+
+          }*/
+    </script>
+  </body>
+</html>

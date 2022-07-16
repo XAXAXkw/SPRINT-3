@@ -64,16 +64,32 @@ var products = [
     }
 ]
 // Array with products (objects) added directly with push(). Products in this array are repeated.
-var cartList = [];
+
+//prevent from erase
+
+let cartList = [];
+
+
 
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
-var cart = [];
+let cart = [];
 
 var total = 0;
+
+
+
+    let counter = cartList.length;
+ document.getElementById("count_product").innerHTML = counter;
+
+
+
 
 // Exercise 1
 
 function buy(id) {
+
+    var audio = new Audio('images/coin.mp3');
+    audio.play();
 
     let buyItem = products.find(o => o.id === id);
 
@@ -81,12 +97,23 @@ function buy(id) {
     cartList.push(buyItem);
     console.log(cartList);
 
+
+  
+    let counter = cartList.length;
+    document.getElementById("count_product").innerHTML = counter;
+
+
+
 }
 
 
 
 // Exercise 2
 function cleanCart() {
+
+    var audio = new Audio('images/jump.mp3');
+    audio.play();
+
     cart = [];
     cartList = [];
 
@@ -94,6 +121,11 @@ function cleanCart() {
     let bodyList = document.getElementById("cart_list");
     total.innerHTML = 0;
     bodyList.innerHTML = "No products selected";
+
+
+    counter =0;
+    document.getElementById('count_product').innerHTML = counter;
+   
     //console.log(cart);
 
 }
@@ -113,7 +145,7 @@ function calculateTotal() {
 
 }
 
-
+/*
 
 // Exercise 4
 
@@ -139,7 +171,7 @@ function generateCart() {
     }
 }
 
-
+*/
    
 
 // Exercise 5
@@ -186,7 +218,7 @@ function printCart() {
 
 
     
-    generateCart();
+    addToCart();
     
 
      total.innerHTML = calculateTotal();
@@ -202,7 +234,7 @@ function printCart() {
         <th scope="row">${prod.name}</th>
         <td>${prod.price}</td>
         <td>${prod.quantity}</td>
-        <td>${total.toFixed(2)}</td>
+        <td>${total.toFixed(2)}<button type="button" class="btn-close" aria-label="Close" onClick=removeFromCart(${prod.id})></button></td>
       </tr>`
     }
 
@@ -214,6 +246,27 @@ function printCart() {
 
 // Exercise 7
 function addToCart(id) {
+
+    cart = [];
+    let total  = document.getElementById("total_price");
+    let bodyList = document.getElementById("cart_list");
+    total.innerHTML = 0;
+    bodyList.innerHTML = "";
+
+    for (let i = 0; i<cartList.length; i++){
+        let found = cart.find((prod) => prod.id === cartList[i].id);
+        
+        if(found === cartList[i]){
+            let prodIndex = cart.indexOf(found);
+            cart[prodIndex].quantity++;
+        }else{
+            cartList[i].quantity = 1;
+            cart.push(cartList[i]);
+        }
+    }
+    
+
+
     // Refactor previous code in order to simplify it 
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
@@ -221,11 +274,30 @@ function addToCart(id) {
 
 // Exercise 8
 function removeFromCart(id) {
+
+    var audio = new Audio('images/jump.mp3');
+    audio.play();
+
+  for (let i = 0; i<cartList.length; i++){
+    if(id === cartList[i].id){
+        cartList.splice(i, 1);
+        break;
+    }
+  }
+
+      
+
+    addToCart();
+  
+    printCart();
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
 }
 
 function open_modal() {
     console.log("Open Modal");
+    var audio = new Audio('images/coin.mp3');
+    audio.play();
+
     printCart();
 }

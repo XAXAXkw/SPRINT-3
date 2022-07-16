@@ -53,10 +53,15 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
+
+  /*
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
+  */
+
+  --bs-body-font-family: xaxax;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -82,11 +87,14 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: var(--bs-gray-600);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-gray-700);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-image: url('../images/grey_bkg.png');
+  background-repeat: repeat;
+
 }
 
 hr {
@@ -106,10 +114,70 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+  
 }
 
-h1, .h1 {
+
+
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #ff0000;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #560000;
+  }
+}
+
+
+
+
+.skullBadgePic {
+
+  height:200px;
+  }
+
+
+
+#bitFont {
+  font-family: 'Press Start 2P', cursive;
   font-size: calc(1.375rem + 1.5vw);
+  color:rgb(255, 0, 0);
+  width: 100%;
+
+  height: 400px;
+  padding:10px;
+  background-color: rgb(82, 29, 29);
+  animation: glow 1s infinite alternate;
+  margin:0;
+  
+ 
+}
+
+.bitFont2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: calc(1.375rem + 1.5vw);
+  color:rgb(255, 0, 0);
+
+
+ 
+  
+ 
+}
+
+
+
+
+
+/* FONTS____________________________________________*/
+
+
+
+
+h1, .h1 {
+  
+  font-size: calc(1.375rem + 1.5vw);
+  font-family: 'Press Start 2P', cursive;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -169,8 +237,21 @@ abbr[data-bs-original-title] {
 address {
   margin-bottom: 1rem;
   font-style: normal;
-  line-height: inherit;
+  line-height:ont inherit;
 }
+
+
+/* BLOCKS____________________________________________*/
+@font-face {
+  font-family: xaxax;
+  src: url(XAXAXFONTONE.ttf);
+}
+
+.xaxaxFont {
+  font-size: 2em;
+  font-family: xaxax;
+}
+
 
 ol,
 ul {
@@ -392,6 +473,7 @@ button:not(:disabled),
 
 textarea {
   resize: vertical;
+  
 }
 
 fieldset {
@@ -497,7 +579,24 @@ progress {
   font-weight: 300;
   line-height: 1.2;
 }
+
+
+
+/*RESPONSIVE_______________*/
+
+
+
+
+
 @media (min-width: 1200px) {
+  .fireBand {
+    height:50px;
+    width:100%;
+    margin:0;
+
+  }
+
+  
   .display-1 {
     font-size: 5rem;
   }
@@ -641,6 +740,8 @@ progress {
 }
 
 @media (min-width: 576px) {
+
+
   .container-sm, .container {
     max-width: 540px;
   }
@@ -892,6 +993,8 @@ progress {
 }
 
 @media (min-width: 576px) {
+
+  
   .col-sm {
     flex: 1 0 0%;
   }
@@ -1318,6 +1421,17 @@ progress {
   }
 }
 @media (min-width: 992px) {
+  .skullBadge {
+  
+
+   right:350px;
+    position: absolute;
+    z-index: 5;
+  }
+  .skullBadgePic {
+  width:250px;
+  height: auto;
+  }
   .col-lg {
     flex: 1 0 0%;
   }
@@ -2126,18 +2240,62 @@ progress {
 }
 
 @media (max-width: 575.98px) {
+  #bitFont {
+
+    width: 100%;
+  
+    height: 340px;
+  
+   
+  }
+ 
+  .skullBadgePic {
+    width:400px;
+    height: auto;
+    }
   .table-responsive-sm {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 767.98px) {
+  @media (max-width: 575.98px) {
+
+    .skullBadgePic {
+      width:200px;
+      height: auto;
+      }
+
+      #bitFont {
+
+        width: 100%;
+      
+        height: 340px;
+      
+       
+      }
+
+
+
+
+
   .table-responsive-md {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 991.98px) {
+  .skullBadgePic {
+    width:200px;
+    height: auto;
+    }
+    .skullBadge {
+
+      top:120px;
+     right:320px;
+      position: absolute;
+      z-index: 5;
+    }}
   .table-responsive-lg {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -4508,15 +4666,16 @@ textarea.form-control-lg {
 }
 
 .card {
+  color:white;
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: var(--bs-gray-700);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 25px;
 }
 .card > hr {
   margin-right: 0;
@@ -5532,7 +5691,7 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: var(--bs-warning);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
@@ -7517,6 +7676,7 @@ textarea.form-control-lg {
 
 .pt-5 {
   padding-top: 3rem !important;
+  color:black;
 }
 
 .pe-0 {
